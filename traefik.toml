@@ -1,0 +1,19 @@
+################################################################
+# API and dashboard configuration
+################################################################
+[api]
+################################################################
+# Docker configuration backend
+################################################################
+[docker]
+domain = "docker.local"
+watch = true
+
+[acme]
+email = "dgbuckley@protonmail.com"
+storage = "acme.json"
+entryPoint = "https"
+
+[acme.dnsChallenge]
+  provider = "digitalocean"
+  delayBeforeCheck = 0
