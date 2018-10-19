@@ -1,17 +1,4 @@
 ################################################################
-# API and dashboard configuration
-################################################################
-[api]
-
-[acme]
-email = "dgbuckley@protonmail.com"
-storage = "acme.json"
-entryPoint = "https"
-
-[acme.dnsChallenge]
-  provider = "digitalocean"
-  delayBeforeCheck = 0
-################################################################
 # Global configuration
 ################################################################
 
@@ -46,8 +33,26 @@ debug = true
 # Optional
 # Default:
 [entryPoints]
-    [entryPoints.http]
-    address = ":80"
+  [entryPoints.http]
+  address = ":80"
+  [entryPoints.https]
+  address = ":443"
+    [entryPoints.https.tls]
+
+
+################################################################
+# API and dashboard configuration
+################################################################
+[api]
+
+[acme]
+email = "dgbuckley@protonmail.com"
+storage = "acme.json"
+entryPoint = "https"
+
+[acme.dnsChallenge]
+  provider = "digitalocean"
+  delayBeforeCheck = 0
 
 ################################################################
 # Traefik logs configuration
